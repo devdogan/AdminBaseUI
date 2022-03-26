@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "y": {
+    "AdminBaseUI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/y",
+            "outputPath": "dist/AdminBaseUI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +29,15 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/js/sb-admin-2.min.js",
+              "src/assets/vendor/chart.js/Chart.min.js",
+              "src/assets/js/demo/chart-area-demo.js",
+              "src/assets/js/demo/chart-pie-demo.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "y:build:production"
+              "browserTarget": "AdminBaseUI:build:production"
             },
             "development": {
-              "browserTarget": "y:build:development"
+              "browserTarget": "AdminBaseUI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "y:build"
+            "browserTarget": "AdminBaseUI:build"
           }
         },
         "test": {
@@ -102,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "y"
+  "defaultProject": "AdminBaseUI"
 }
